@@ -31,3 +31,17 @@ func New(z *zoho.Zoho) *API {
 		id:   id,
 	}
 }
+
+type ApiResponse struct {
+	Code        int    `json:"code,omitempty"`
+	Message     string `json:"message,omitempty"`
+	PageContext struct {
+		Page          int    `json:"page,omitempty"`
+		PerPage       int    `json:"per_page,omitempty"`
+		HasMorePage   bool   `json:"has_more_page,omitempty"`
+		AppliedFilter string `json:"applied_filter,omitempty"`
+		ReportName    string `json:"report_name,omitempty"`
+		SortColumn    string `json:"sort_column,omitempty"`
+		SortOrder     string `json:"sort_order,omitempty"`
+	} `json:"page_context,omitempty"`
+}

@@ -6,8 +6,8 @@ import (
 	zoho "github.com/schmorrison/Zoho"
 )
 
-//https://www.zoho.com/invoice/api/v3/#Invoices_List_invoices
-//func (c *API) ListInvoices(request interface{}, OrganizationID string, params map[string]zoho.Parameter) (data ListInvoicesResponse, err error) {
+// https://www.zoho.com/invoice/api/v3/#Invoices_List_invoices
+// func (c *API) ListInvoices(request interface{}, OrganizationID string, params map[string]zoho.Parameter) (data ListInvoicesResponse, err error) {
 func (c *API) ListInvoices() (data ListInvoicesResponse, err error) {
 
 	endpoint := zoho.Endpoint{
@@ -82,9 +82,9 @@ type ListInvoicesResponse struct {
 		Documents       string  `json:"documents"`
 		SalespersonID   string  `json:"salesperson_id"`
 		SalespersonName string  `json:"salesperson_name"`
-		ShippingCharge  float32 `json:"shipping_charge"`
-		Adjustment      float32 `json:"adjustment"`
-		WriteOffAmount  float32 `json:"write_off_amount"`
-		ExchangeRate    float32 `json:"exchange_rate"`
+		ShippingCharge  float64 `json:"shipping_charge"`
+		Adjustment      float64 `json:"adjustment"`
+		WriteOffAmount  float64 `json:"write_off_amount"`
+		ExchangeRate    float64 `json:"exchange_rate"`
 	} `json:"invoices"`
 }

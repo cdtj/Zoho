@@ -179,7 +179,7 @@ func (z *Zoho) HTTPRequest(endpoint *Endpoint) (err error) {
 	if len(body) > 0 { // Avoid failed to unmarshal if there is no result
 		err = json.Unmarshal(body, data)
 		if err != nil {
-			return fmt.Errorf("Failed to unmarshal data from response for %s: got status %s: %s", endpoint.Name, resolveStatus(resp), err)
+			return fmt.Errorf("Failed to unmarshal data from response for %s: got status %s: %s\n%s", endpoint.Name, resolveStatus(resp), err, body)
 		}
 
 		// Search for hidden errors (appears on success response)

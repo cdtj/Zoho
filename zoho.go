@@ -89,6 +89,6 @@ type OAuth struct {
 	clientID     string
 	clientSecret string
 	redirectURI  string
-	token        AccessTokenResponse
+	token        *AccessTokenResponse
 	baseURL      string
 }
