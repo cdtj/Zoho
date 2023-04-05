@@ -22,7 +22,7 @@ const (
 	ScopeAccountants      zoho.Scope = "accountants"
 	ScopeUsers            zoho.Scope = "users"
 
-	MethodNoOp zoho.Method = ""
+	MethodNoMth zoho.Method = ""
 
 	OpRead   zoho.Operation = "READ"
 	OpDelete zoho.Operation = "DELETE"
