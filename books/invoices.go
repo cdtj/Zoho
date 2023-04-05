@@ -236,12 +236,12 @@ type InvoiceResponseLineItem struct {
 	Name               string        `json:"name,omitempty"`
 	Description        string        `json:"description,omitempty"`
 	ItemOrder          int           `json:"item_order,omitempty"`
-	BCYRate            int           `json:"bcy_rate,omitempty"`
-	Rate               int           `json:"rate,omitempty"`
-	Quantity           int           `json:"quantity,omitempty"`
+	BCYRate            float64       `json:"bcy_rate,omitempty"`
+	Rate               float64       `json:"rate,omitempty"`
+	Quantity           float64       `json:"quantity,omitempty"`
 	Unit               string        `json:"unit,omitempty"`
-	DiscountAmount     int           `json:"discount_amount,omitempty"`
-	Discount           int           `json:"discount,omitempty"`
+	DiscountAmount     float64       `json:"discount_amount,omitempty"`
+	Discount           float64       `json:"discount,omitempty"`
 	Tags               []Tag         `json:"tags,omitempty"`
 	TaxID              string        `json:"tax_id,omitempty"`
 	TDSTaxID           string        `json:"tds_tax_id,omitempty"`
@@ -249,7 +249,7 @@ type InvoiceResponseLineItem struct {
 	TaxType            string        `json:"tax_type,omitempty"`
 	TaxPercentage      float64       `json:"tax_percentage,omitempty"`
 	TaxTreatmentCode   string        `json:"tax_treatment_code,omitempty"`
-	ItemTotal          int           `json:"item_total,omitempty"`
+	ItemTotal          float64       `json:"item_total,omitempty"`
 	HeaderName         string        `json:"header_name,omitempty"`
 	HeaderID           string        `json:"header_id,omitempty"`
 }

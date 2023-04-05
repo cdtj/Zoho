@@ -98,3 +98,25 @@ func (c *API) GetItem(itemID string) (data *ListItemResponse, err error) {
 
 	return nil, fmt.Errorf("data retrieved was not 'ListItemResponse'")
 }
+
+func (c *API) UpdateItem(itemID string, item *Item) (data *ListItemResponse, err error) {
+	url := fmt.Sprintf("https://books.zoho.%s/api/v3/%s/%s", c.ZohoTLD, moduleItems, itemID)
+	endpoint := zoho.Endpoint{
+		Name:         moduleItems,
+		URL:          url,
+		Method:       zoho.HTTPPut,
+		RequestBody:  &item,
+		ResponseData: &ListItemResponse{},
+	}
+
+	err = c.Zoho.HTTPRequest(&endpoint)
+	if err != nil {
+		return nil, fmt.Errorf("failed to retrieve item[%s]: %s", url, err)
+	}
+
+	if v, ok := endpoint.ResponseData.(*ListItemResponse); ok {
+		return v, nil
+	}
+
+	return nil, fmt.Errorf("data retrieved was not 'ListItemResponse'")
+}
